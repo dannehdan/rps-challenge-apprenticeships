@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/game_result'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   
@@ -12,8 +13,12 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/choose-your-weapon' do
-    @player_1_name = params[:player_1_name]
+  post '/names' do
+    $game = Game.new(params[:player_1_name])
+    redirect to('/choose-your-weapon')
+  end
+
+  get '/choose-your-weapon' do
     erb :play
   end
 
