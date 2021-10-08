@@ -3,8 +3,7 @@ require 'sinatra/reloader'
 require './lib/game_result'
 
 class RockPaperScissors < Sinatra::Base
-  enable :sessions
-
+  
   configure :development do
     register Sinatra::Reloader
   end
