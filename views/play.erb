@@ -1,5 +1,8 @@
-<p>Player 1: <%= $game.player_1%>
-<p>You are playing: <%= $game.player_2%>
+<p>Player 1: <%= $game.player_1.name %>
+<p>You are playing: <%= $game.player_2.name %>
+<p>Score:
+<br>
+<%= $game.player_1.score %> - <%= $game.player_2.score%>
 <p>Choose your weapon:</p>
 <form action="/result" method="post">
   <input type="submit" value="Rock" name="user_choice">

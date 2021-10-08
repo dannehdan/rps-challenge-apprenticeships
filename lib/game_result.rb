@@ -8,7 +8,19 @@ class GameResult
   end
 
   def result
-    draw ? "Draw" : no_draw
+    @result = draw ? "Draw" : no_draw
+    update_score
+    @result
+  end
+
+  def update_score
+    case @result 
+      when "You win"
+        $game.player_1.score += 1
+      when "You lose"
+        $game.player_2.score += 1
+      else
+      end
   end
 
   private
