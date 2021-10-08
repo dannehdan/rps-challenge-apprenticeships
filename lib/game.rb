@@ -1,5 +1,5 @@
 class Game
-  attr_reader :players
+  attr_reader :players, :player_1, :player_2
 
   def initialize(player_1, player_2)
     @player_1 = player_1
@@ -11,7 +11,7 @@ class Game
   end
 
   def player_2
-    @players.last
+    @player_2
   end
 
   def result(player_1_choice, player_2_choice)
